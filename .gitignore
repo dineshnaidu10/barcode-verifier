@@ -1,0 +1,26 @@
+# Secrets / site-specific configuration
+db_config.ini
+config.xlsx
+*.db
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# PyInstaller output
+build/
+dist/
+*.spec
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Exports
+*.csv
+!samples/*.csv
