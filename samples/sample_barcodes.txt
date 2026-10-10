@@ -1,0 +1,36 @@
+# Dummy barcodes for testing config.sample.xlsx
+# NOTE: DEMO-001 and DEMO-004 check the year section against the CURRENT year.
+#       These samples use "26" (2026). If you run this in another year, change the YY digits.
+#       Duplicate check is ON for DEMO-001, DEMO-002 and DEMO-004 (arrays): scanning the same
+#       PASS barcode twice FAILS the second time (that's expected - it is the test).
+
+== DEMO-001  Demo Main Board (structured: MA + YY + WW + 6 digits) ==
+PASS  MA2641000001
+PASS  MA2641000002
+FAIL  MA2541000003     # wrong year (25)
+FAIL  MA2699000004     # work week 99 is outside 01-53
+FAIL  MA26410000       # too short
+FAIL  MB2641000005     # wrong prefix
+FAIL  MA26410000AB     # running number not numeric
+
+== DEMO-002  Demo Board (regex: AAA-0000-XXXX) ==
+PASS  ABC-1234-X9Z2
+PASS  QWE-0001-0000
+FAIL  ABC-123-X9Z2     # only 3 digits
+FAIL  abc-1234-X9Z2    # lowercase letters
+
+== DEMO-003  Demo Board (fixed length: 10 characters) ==
+PASS  1234567890
+PASS  ABCDEFGHIJ
+FAIL  12345            # too short
+FAIL  12345678901      # too long
+
+== DEMO-004  Demo Panel 2x2 (panel SN, then 4 array SNs) ==
+Panel SN (PASS)  PNL0000000000001
+Panel SN (FAIL)  XYZ0000000000001      # wrong prefix
+Array 1 (PASS)   ARR2641000001
+Array 2 (PASS)   ARR2641000002
+Array 3 (PASS)   ARR2641000003
+Array 4 (PASS)   ARR2641000004
+Array (FAIL)     ARR2641000002         # duplicate on the same panel
+Array (FAIL)     ARR2541000009         # wrong year

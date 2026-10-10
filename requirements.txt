@@ -1,0 +1,4 @@
+# Python 3.9+ ; tkinter ships with the standard Windows/macOS installers
+# (Linux: sudo apt install python3-tk)
+pyodbc>=5.0
+openpyxl>=3.1

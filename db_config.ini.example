@@ -1,0 +1,13 @@
+; Copy this file to "db_config.ini" (same folder as iqc_scanner.py) and edit.
+; NEVER commit db_config.ini - it is listed in .gitignore.
+
+[database]
+driver   = ODBC Driver 17 for SQL Server
+server   = localhost\SQLEXPRESS
+database = IQCScanner
+
+; trusted = yes  -> Windows authentication (no username/password needed)
+; trusted = no   -> SQL authentication (fill in username and password)
+trusted  = yes
+username =
+password =
